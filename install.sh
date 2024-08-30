@@ -13,10 +13,6 @@ spack repo add spack_test
 spack add sycl-ocean
 spack install
 spack load sycl-ocean
-install_path=$(spack find -p sycl-ocean | grep "sycl-ocean" | awk '{print $2}')
-if [ -d "$install_path" ]; then
-    cd "$install_path"
-    echo "Current directory: $(pwd)"
-else
-    echo "Directory not found: $install_path"
-fi
+install_path=$(spack location -i sycl-ocean)/third_bin
+echo "Adding $install_path to PATH..."
+export PATH=$install_path:$PATH
