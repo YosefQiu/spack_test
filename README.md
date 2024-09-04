@@ -1,7 +1,7 @@
 ## Instructions for build
-Installation is done through Spack. If you don't have Spack installed or if Spack is new to you
+Installation is done through Spack. If you don't have Spack installed or if Spack is new to you. I use spack **0.23.0.dev0 (05357052ac29981fb57c3d1e923a1eb86c470cfd)**
 ```bash
-git clone --depth=100 --branch=releases/v0.22 https://github.com/spack/spack.git ~/spack
+git clone https://github.com/spack/spack.git ~/spack
 cd ~/spack
 . share/spack/setup-env.sh
 ```

@@ -1,5 +1,3 @@
-spack env create test_env24
-spack env activate test_env24
 spack add intel-oneapi-compilers+nvidia
 spack add netcdf-c@4.9+mpi
 spack add vtk+mpi
