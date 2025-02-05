@@ -14,7 +14,7 @@ spack --version
 git clone https://github.com/YosefQiu/spack_test.git
 spack env create ocn_env
 spack env activate ocn_env
-spack repo add spack_test
-spack add sycl-ocean
+spack repo add MOPS
+spack add MOPS
 spack install
 ```
