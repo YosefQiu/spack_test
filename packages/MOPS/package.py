@@ -13,7 +13,7 @@ class Mops(CMakePackage):
     variant('vtk', default=True, description='Enable VTK support')
 
     # Add required dependencies
-    depends_on("intel-oneapi-compilers +nvidia", type=("build", "run"))
+    depends_on("intel-oneapi-compilers@2024.1.0 +nvidia", type=("build", "run"))
     depends_on("ndarray+hdf5+netcdf+mpi+cuda+vtk", type=("build", "link", "run"))
     depends_on("vtk@9.2.2", when='+vtk', type=("build", "link", "run"))
     depends_on("yaml-cpp", type=("build", "link", "run"))
@@ -27,7 +27,7 @@ class Mops(CMakePackage):
         args.append("-DNDARRAY_DIR=" + self.spec["ndarray"].prefix)
         
         if '+vtk' in self.spec:
-            args.append("-USE_VTK=ON")
+            args.append("-MOPS_USE_VTK=ON")
             args.append("-DVTK_DIR=" + self.spec["vtk"].prefix)
         
         return args
